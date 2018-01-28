@@ -43,7 +43,7 @@ class FloatTensor(object):
             out = FloatTensor(self.data / other.data, autograd=True, creators=[self,other], creation_op="div")
             self.children[out.id] = 0
             other.children[out.id] = 0
-            
+            return out
         return FloatTensor(self.data / other.data)    
     
     def __sub__(self,other):
